@@ -11,7 +11,7 @@ experiment.
 
 The simplest way to do this with the REST api, is a trivial for loop
 -- for each team, fetch the team info. A trivial implementation is at
-[fetch-team-members-v3.py].
+[fetch-team-members-v3.py](./fetch-team-members-v3.py).
 
 But, this has a lot of overhead. It's a REST call per team, and each
 call has a bunch of extraneous data. So, can we use graphql?
@@ -35,4 +35,4 @@ This results in something much more efficient. We're able to query for
 _most_ of the teams, and _most_ of their members with a single API
 call. And the few that require pagination can be followed up.
 
-Proof of concept code can be see at [fetch-team-members-v4.py]
+Proof of concept code can be see at [fetch-team-members-v4.py](./fetch-team-members-v4.py).
