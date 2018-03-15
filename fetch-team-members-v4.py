@@ -216,6 +216,8 @@ def get_extended_team_data(orgname, team_name):
 
 def get_org_data(orgname):
     # initial data load
+    if orgname == "":
+        raise Exception('Missing orgname')
     org_data = get_initial_org_data(orgname)
 
     # Now, lets revisit anything for followup
@@ -234,7 +236,7 @@ def parse_args():
                         help='Output File')
 
     parser.add_argument('-org', dest='org', required=False,
-                        default=os.environ['GITHUB_ORG'],
+                        default=os.environ.get('GITHUB_ORG', ''),
                         help='GitHub Organization')
 
     args = parser.parse_args()
